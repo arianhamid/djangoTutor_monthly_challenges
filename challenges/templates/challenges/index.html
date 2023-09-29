@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% extends "base.html"%}
+
+{% block "title" %}
     <title>challenges</title>
-  </head>
-  <body>
+{% endblock %}
+
+{%block "content" %}
     <ul>
       {% for month in months %}
       <li><a href="{% url "challenges_url_name" month%}">{{month|title}}</a></li>
       {%endfor%}
     </ul>
-  </body>
-</html>
+{% endblock %}

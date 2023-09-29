@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title|title}} challenge</title>
-</head>
-<body>
+{% extends "base.html"%}
+
+{% block "title" %}
+    <title>challenges</title>
+{% endblock %}
+
+{% block "content" %}
     <h1>{{title|title}}</h1>
     <h4>{{challenge_text}}</h4>
-</body>
-</html>
+{% endblock %}
