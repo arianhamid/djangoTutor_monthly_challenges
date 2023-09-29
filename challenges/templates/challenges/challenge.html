@@ -1,10 +1,11 @@
 {% extends "base.html"%}
 
 {% block "title" %}
-    <title>challenges</title>
+    {{title|title}}challenges
 {% endblock %}
 
 {% block "content" %}
+{%include "./includes/header.html"%}
     <h1>{{title|title}}</h1>
     <h4>{{challenge_text}}</h4>
 {% endblock %}
