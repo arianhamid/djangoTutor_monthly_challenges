@@ -15,7 +15,7 @@ monthly_challenges = {
     "september": "walk for at least 30 minutes every day!",
     "november": "eat no meats for the entire of the month!",
     "october": "cock for at least 30 minutes every day!",
-    "december": "cock for at least 30 minutes every day!",
+    "december": None,
 }
 # Create your views here.
 
@@ -23,7 +23,8 @@ monthly_challenges = {
 def index_challenge(request):
     months = list(monthly_challenges.keys())
     return render(request, 'challenges/index.html', {'months': months})
-    
+
+
 def monthly_challenges_by_number(request, month):
     months = list(monthly_challenges.keys())
     if month > len(months) or month < 1:
@@ -31,6 +32,7 @@ def monthly_challenges_by_number(request, month):
     redirect_month = months[month-1]
     redirect_path = reverse("challenges_url_name", args=[redirect_month])
     return HttpResponseRedirect(redirect_path)
+
 
 def monthly_challenge(request, month):
     try:
